@@ -5,7 +5,9 @@ const jwt = require('jsonwebtoken')
 
 exports.getUser = async(req, res) => {
     try {
-        const users = await User.findAll();
+        const users = await User.findAll({
+            attributes : ['id', 'username', 'email']
+        });
         res.status(200).json({users});
     } catch (error) {
         res.status(500).json({message : error.message})
@@ -56,6 +58,30 @@ exports.login = async (req, res) => {
             maxAge : 24 * 60 * 60 * 1000
         });
         res.json({ accestoken })
+    } catch (error) {
+        res.status(500).json({message : error.message})
+    }
+}
+
+exports.logout = async(req, res) => {
+    try {
+        
+    const refreshToken = req.cookies.refreshToken;
+    if(!refreshToken) return res.status(204);
+    const user = await User.findAll({
+        where : { 
+            refresh_token : refreshToken
+        }
+    });
+    if(!user[0]) return res.status(204);
+    const userId = user[0].id;
+    await User.update({refresh_token : null}, {
+        where : {
+            id : userId
+        }
+    });
+    res.clearCookie('refreshToken');
+    return res.status(200).json('logout succesfully');
     } catch (error) {
         res.status(500).json({message : error.message})
     }

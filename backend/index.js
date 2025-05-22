@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const cookieParse = require ('cookie-parser')
 const dotenv = require('dotenv')
 require ('dotenv').config()
 
@@ -11,6 +12,7 @@ const userRoutes = require ('./routes/userRoutes.js')
 // middlewares
 const app = express()
 app.use(cors())
+app.use(cookieParse())
 app.use(express.json())
 
 // api
