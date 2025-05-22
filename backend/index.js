@@ -1,4 +1,30 @@
-const db = require('./models')
-db.sequelize.sync({alter : true}).then(() =>{
-    console.log('Database Sync')
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const dotenv = require('dotenv')
+require ('dotenv').config()
+
+
+// routes
+const userRoutes = require ('./routes/userRoutes.js')
+
+// middlewares
+const app = express()
+app.use(cors())
+app.use(express.json())
+
+// api
+app.use('/api/auth', userRoutes);
+
+
+
+// database sync
+// const db = require('./models')
+// db.sequelize.sync({alter : true}).then(() =>{
+//     console.log('Database Sync')
+// }); 
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server Running using port on ${PORT}`);
 });
