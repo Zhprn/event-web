@@ -17,4 +17,4 @@ GET http://localhost:3000/api/auth/token
 
 ### logout
 DELETE http://localhost:3000/api/auth/logout
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJuYW1lIjoiemhhZnJhbiIsImVtYWlsIjoiemhhZnJhbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzkyODU1OSwiZXhwIjoxNzQ3OTI4NTc0fQ.qecY4gkUv5-pxGtuBZqA2msN9R0vKoYyW8PVAZ-G-yk
+Authorization: Bearer .eyJ1c2VySWQiOjQsInVzZXJuYW1lIjoiemhhZnJhbiIsImVtYWlsIjoiemhhZnJhbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzkyODU1OSwiZXhwIjoxNzQ3OTI4NTc0fQ.qecY4gkUv5-pxGtuBZqA2msN9R0vKoYyW8PVAZ-G-yk
