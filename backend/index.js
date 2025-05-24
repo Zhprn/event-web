@@ -8,6 +8,7 @@ require ('dotenv').config()
 
 // routes
 const userRoutes = require ('./routes/userRoutes.js')
+const eventRoutes = require ('./routes/eventRoutes.js')
 
 // middlewares
 const app = express()
@@ -17,6 +18,7 @@ app.use(express.json())
 
 // api
 app.use('/api/auth', userRoutes);
+app.use('/api/event', eventRoutes);
 
 
 

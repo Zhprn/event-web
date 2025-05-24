@@ -18,3 +18,17 @@ GET http://localhost:3000/api/auth/token
 ### logout
 DELETE http://localhost:3000/api/auth/logout
 Authorization: Bearer .eyJ1c2VySWQiOjQsInVzZXJuYW1lIjoiemhhZnJhbiIsImVtYWlsIjoiemhhZnJhbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzkyODU1OSwiZXhwIjoxNzQ3OTI4NTc0fQ.qecY4gkUv5-pxGtuBZqA2msN9R0vKoYyW8PVAZ-G-yk
+
+### post
+POST http://localhost:3000/api/event/addEvent
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ6YWZyYW5AZ21haWwuY29tIiwiaWF0IjoxNzQwMDI3NjY0LCJleHAiOjE3NDA2MzI0NjR9.BHVGLwtJf0-6-qg_Fj5TS4JEmTR3ubZB2s9VpTW4Pa4
+
+{
+    "judul" : "Gala Swara",
+    "deskripsi" : "in deskripsi",
+    "tanggal" : "2025-02-20",
+    "waktu" : "02:32:44",
+    "lokasi" : "Padang",
+    "Gambar" : "urlgambar"
+}
