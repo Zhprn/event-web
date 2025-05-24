@@ -71,7 +71,7 @@ exports.logout = async(req, res) => {
     const user = await User.findAll({
         where : { 
             refresh_token : refreshToken
-        }
+        },
     });
     if(!user[0]) return res.status(204);
     const userId = user[0].id;
